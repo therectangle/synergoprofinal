@@ -1,0 +1,67 @@
+
+  <section class="wrapper subscribe con-row">
+    <div class="custom-container">
+      <h2>
+        Free Ergo tips on your email
+      </h2>
+      <p>
+        Subscribe to the “ErgoMatters” mailing list to receive ergonomic tips and updates from our experts
+      </p>
+      
+      <div class="subscribe-form">
+        
+        <input type="email" placeholder="Email Address" [(ngModel)] ='subscriptionEmail' required>
+        <button (click)="submitForSubscribe();">Subscribe</button>
+      
+      </div>
+    </div>
+  </section>
+
+  <section class="c-popup" *ngIf="isPaswordLinkSent">
+    <div class="popup-con">
+      <img src="assets/images/checkmark-circle.svg" alt="">
+      <h3>Subscription Success</h3>
+      <p>Your email address has been subscribed with us</p>
+      <a (click)="hide()">OK</a>
+    </div>
+  </section>
+  <section class="c-popup" *ngIf="isDanger">
+    <div class="popup-con">
+      <img src="assets/images/Icon-awesome-exclamation-triangle.png" alt="">
+      <h3>Email Validation</h3>
+      <p>Please Enter Valid Email Id</p>
+      <a (click)="hideDanger()">OK</a>
+    </div>
+  </section>
+  <section class="c-popup" *ngIf="isEmailAlreadySubscribed">
+    <div class="popup-con">
+      <img src="assets/images/Icon-awesome-exclamation-triangle.png" alt="">
+      <h3>Email Subscription</h3>
+      <p>Your email address is already subscribed with Us</p>
+      <a (click)="hideIsEmailAlreadySubscribed()">OK</a>
+    </div>
+  </section>
+  <footer class="m-footer wrapper">
+    <div class="custom-container">
+      <div class="website">
+        <h3>
+          Check out our other sites
+        </h3>
+        <img src="assets/images/home/website.svg" alt="">
+        <span><a href="www.synergo.com.sg">www.synergo.com.sg</a> | <a
+            href="www.synergoshop.com">www.synergoshop.com</a></span>
+      </div>
+      <div class="social">
+        <h3>
+          Stay Connected with us
+        </h3>
+        <a href=""><img src="assets/images/home/facebook.svg" alt=""></a>
+        <a href=""><img src="assets/images/home/twitter.svg" alt=""></a>
+        <a href=""><img src="assets/images/home/linkedin.svg" alt=""></a>
+      </div>
+    </div>
+    <div class="copy">
+      <p>Copyright © 2020 - Synergo Consulting Pte.Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+  

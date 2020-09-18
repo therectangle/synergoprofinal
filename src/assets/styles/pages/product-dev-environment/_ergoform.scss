@@ -1,0 +1,168 @@
+.form-inputs {
+    width: 100%;
+    label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 7px;
+    }
+    input[type="text"] {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        line-height: 20px;
+        padding: 10px;
+        max-width: 380px;
+    }
+
+    input[type="checkbox"]:checked,
+    input[type="checkbox"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    input[type="checkbox"]:checked + label,
+    input[type="checkbox"]:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: #666;
+    }
+    input[type="checkbox"]:checked + label:before,
+    input[type="checkbox"]:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid $color-sky-blue;
+        border-radius: 0%;
+        background: #fff;
+    }
+    input[type="checkbox"]:checked + label:after,
+    input[type="checkbox"]:not(:checked) + label:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: $color-sky-blue;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        border-radius: 0%;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+
+    input[type="checkbox"]:not(:checked) + label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    input[type="checkbox"]:checked + label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    textarea {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        line-height: 20px;
+        padding: 10px;
+        height: 100px;
+        max-width: 380px;
+    }
+    div {
+        display: none;
+        width: 100%;
+    }
+
+    ul {
+        width: 100%;
+        max-width: 380px;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 33.33%;
+            margin-bottom: 15px;
+        }
+    }
+}
+.self-ergo-form {
+    .col-wrap {
+        padding: 30px 0;
+        border-bottom: 1px solid #e2e3e4;
+        .inner-col {
+            width: 100%;
+            max-width: 1130px;
+            float: left;
+            padding: 0 15px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            @media only screen and (max-width: 600px) {
+                display: block;
+            }
+            .drag-n-drop {
+                width: 100%;
+                background-color: #fff;
+                border-radius: 3px;
+                border: 1px solid #ddd;
+                line-height: 20px;
+                padding: 20px;
+                max-width: 380px;
+                text-align: center;
+                margin: 20px 0;
+                a {
+                    color: $color-sky-blue;
+                    text-decoration: underline;
+                }
+            }
+            .img-ref {
+                margin-top: 20px;
+                img {
+                    margin-right: 10px;
+                }
+            }
+            .form-title {
+                font-size: 18px;
+                font-weight: 700;
+                width: 40%;
+                padding-right: 50px;
+                text-align: right;
+                @media only screen and (max-width: 600px) {
+                    text-align: left;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .form-col {
+                width: 60%;
+                @media only screen and (max-width: 600px) {
+                    text-align: left;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                h4 {
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                }
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

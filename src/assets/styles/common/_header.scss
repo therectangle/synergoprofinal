@@ -1,0 +1,274 @@
+header {
+    background-color: $header-bg;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    @media only screen and (max-width: 991px) {
+        padding: 10px 0;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 188px;
+            @media only screen and (max-width: 991px) {
+                width: 140px;
+            }
+        }
+        nav {
+            width: 100%;
+            max-width: 624px;
+            margin-right: 60px;
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+            &.open {
+                @media only screen and (max-width: 991px) {
+                    display: block;
+                }
+            }
+            @media only screen and (max-width: 991px) {
+                width: 100%;
+                max-width: 100%;
+                height: calc(100vh - 50px);
+                position: fixed;
+                top: 50px;
+                left: 0;
+                margin: 0;
+                flex-direction: column;
+                background-color: $color-white;
+            }
+            ul {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                @media only screen and (max-width: 991px) {
+                    flex-direction: column;
+                }
+                li {
+                    margin: 0 20px;
+                    padding: 23px 0;
+                    position: relative;
+                    cursor: pointer;
+                    @media only screen and (max-width: 991px) {
+                        width: 100%;
+                        margin: 0;
+                        padding: 0px;
+                        border-bottom: 1px solid #d1d1d1;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    .arrow {
+                        width: 16px;
+                        height: 16px;
+                        display: inline-block;
+                        background-image: url(../assets/images/down-arrow.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        position: relative;
+                        top: 3px;
+                        @media only screen and (max-width: 991px) {
+                            position: absolute;
+                            top: 10px;
+                            right: 15px;
+                            background-image: url(../assets/images/right-arrow.png);
+                        }
+                    }
+                    a {
+                        color: $color-white;
+                        padding: 0 5px;
+                        display: inline-block;
+                        @media only screen and (max-width: 991px) {
+                            width: 100%;
+                            color: $color-black;
+                            padding: 10px 15px;
+                        }
+                    }
+                    ul {
+                        flex-direction: column;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: #f6f6f6;
+                        padding: 10px 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        @extend .anim-05s;
+                        @media only screen and (max-width: 991px) {
+                            position: relative;
+                            top: 0;
+                            left: 0;
+                            opacity: 1;
+                            visibility: visible;
+                            padding: 0;
+                            transition: all 0s ease-in-out !important;
+                            display: none;
+                        }
+                        &.resources-nav {
+                            width: 130px;
+                            @media only screen and (max-width: 991px) {
+                                width: 100%;
+                            }
+                        }
+                        li {
+                            width: 100%;
+                            float: left;
+                            margin: 0;
+                            padding: 0px;
+                            text-align: left;
+                            border-top: 1px solid #d1d1d1;
+                            border-bottom: 0;
+                            a {
+                                width: 100%;
+                                float: left;
+                                padding: 10px 20px;
+                                color: #555555;
+                                @media only screen and (max-width: 991px) {
+                                    padding: 10px 15px;
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        ul {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                    &.active {
+                        ul {
+                            display: block;
+                            
+                        }
+                        .arrow {
+                            @media only screen and (max-width: 991px) {
+                                background-image: url(../assets/images/down-arrow-v3.png);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .profile-icon {
+            position: absolute;
+            top: 17px;
+            right: 15px;
+            ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                width: 120px;
+                right: 0;
+                background-color: #f6f6f6;
+                padding: 10px 10px;
+                opacity: 0;
+                visibility: hidden;
+                @extend .anim-05s;
+                a{
+                    color: #000;
+                }
+            }
+            img {
+                @media only screen and (max-width: 991px) {
+                    width: 28px;
+                }
+            }
+            @media only screen and (max-width: 991px) {
+                top: 10px;
+            }
+
+            &:hover{
+                ul {
+                    opacity: 1;
+                    visibility: visible;
+                   
+                }
+            }
+        }
+    }
+    &.login-header {
+        padding: 10px 0;
+        .container {
+            justify-content: center;
+        }
+    }
+    #nav-icon1 {
+        width: 30px;
+        height: 20px;
+        position: absolute;
+        top: 15px;
+        right: 60px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        display: none;
+        @media only screen and (max-width: 991px) {
+            display: block;
+        }
+    }
+
+    #nav-icon1 span {
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: $color-white;
+        border-radius: 0px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+    }
+
+    #nav-icon1 span:nth-child(1) {
+        top: 0px;
+    }
+
+    #nav-icon1 span:nth-child(2) {
+        top: 10px;
+    }
+
+    #nav-icon1 span:nth-child(3) {
+        top: 19px;
+    }
+
+    #nav-icon1.open span:nth-child(1) {
+        top: 10px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    #nav-icon1.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+
+    #nav-icon1.open span:nth-child(3) {
+        top: 10px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+}

@@ -1,0 +1,69 @@
+
+    <section class="p-login"> 
+        <div class="image-div">
+            <div class="logo">
+              <img src="assets/images/synergo-logo-white.svg" alt="">
+            </div>
+            
+            <p>Ergonomics Program Management Suite</p>
+        </div>
+        <div class="form-div">
+          <form class="form-wrap" [formGroup]="loginForm">
+              <h2 class="w-full">
+                Login
+              </h2>
+              <p class="desc-text">
+                Please login with your registered company email address
+              </p>
+              <ul class="w-full">
+                <li class="form-input-text-2" [class.error]="submitted && loginForm.get('email').touched && (loginForm.get('email').errors || !isValidDomainemailId)">
+                  <label>Company Email</label>
+                  <input type="email" formControlName="email" class="form-control">
+                  <span *ngIf="submitted && loginForm.get('email').touched &&  (loginForm.get('email').errors || !isValidDomainemailId)" class="error-msg">Please provide a valid company email</span>
+                
+                </li>
+        
+                <li class="form-input-text-2" [class.error]="submitted && loginForm.get('password').touched && loginForm.get('password').errors">
+                  <label>Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+                  <span *ngIf="submitted && loginForm.get('password').touched &&  loginForm.get('password').errors"  class="error-msg">Please provide a valid password</span>
+                </li>
+                <li>
+                  <span class="error">{{errorMessage}}
+                  {{successMessage}}
+                </span>
+                </li>
+        
+                <li class="form-input-text-2">
+                  <button type="submit" (click)="tryLogin(loginForm.value)" class="btn1">Login</button>
+                </li>
+        
+                <li class="dont-ac">
+                    <p>Don't have an account?</p> <a href="#" routerLink="/register" class="text-bold">Sign up!</a>
+                </li>
+                <li class="forgot-details">
+                    <a href="#" routerLink="/forgotPassword">Forgot Login Details?</a>
+                  </li>
+              </ul>
+            </form>
+          </div>
+    </section>
+
+    <!--<section class="c-popup" *ngIf="isValidDomainemailIdPopup">
+      <div class="popup-con">
+        <img src="assets/images/Icon-awesome-exclamation-triangle.png" alt="">
+        <h3>Invalid Email</h3>
+        <p>Please provide a valid company email</p>
+        <a href="#" routerLink="/login">OK</a>
+      </div>
+    </section>
+
+    <section class="c-popup" *ngIf="isValidDomainemailIdUser">
+      <div class="popup-con">
+        <img src="assets/images/Icon-awesome-exclamation-triangle.png" alt="">
+        <h3>Login Error</h3>
+        <p>Please Check If You are a Registered User Or Not</p>
+        <a href="javascript:void();" (click)='clickToClosePopup()'>OK</a>
+      </div>
+    </section>
+  -->

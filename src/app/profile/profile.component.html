@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+<section class="wrapper c-inner-banner survey-home ">
+
+  <div class="custom-container">
+    <h1>
+      Profile
+    </h1>
+    <!-- <a class="btn-new" href=""><span>Start Assessment</span></a> -->
+  </div>
+  <span class="mouse-icon"><img src="assets/images/home/mouse_icon.svg" alt=""></span>
+</section>
+<section class="wrapper c-breadcrumb">
+  <div class="custom-container">
+    <a href="">Home</a> / <a href="" class="active">Profile</a>
+  </div>
+</section>
+
+<section class="wrapper p-self-ergo innepage">
+  <form class="w-full" [formGroup]="requestErgoForm">
+    <div class="custom-container">
+    
+      <div class="inner-col personal-details">
+        <h2>
+          Personal Details
+        </h2>
+        <div class="form-col">
+          <ul>
+            <li class="form-input-text">
+              <label>Full Name</label>
+              <input type="text" id="fullName" [(ngModel)]="requestErgo.fullName" formControlName="fullName"
+                name="fullName" readonly="true">
+              <span *ngIf="requestErgoForm.controls.fullName.touched && requestErgoForm.controls.fullName.invalid"
+                class="error-msg">
+                <div *ngIf="requestErgoForm.controls.fullName.errors.required" class="error-msg">Full Name is required.
+                </div>
+
+              </span>
+            </li>
+            <li class="form-input-text">
+              <label>Organisation</label>
+              <input type="text" id="organisation" [(ngModel)]="requestErgo.organisation" formControlName="organisation"
+                name="organisation" readonly="true">
+              <span
+                *ngIf="requestErgoForm.controls.organisation.touched && requestErgoForm.controls.organisation.invalid"
+                class="error-msg">
+                <div *ngIf="requestErgoForm.controls.organisation.errors.required" class="error-msg">Organisation is
+                  required.</div>
+
+              </span>
+            </li>
+            <li class="form-input-text">
+              <label>Work email</label>
+              <input type="text" id="workEmail" [(ngModel)]="requestErgo.workEmail" formControlName="workEmail"
+                name="workEmail" readonly="true">
+              <div *ngIf="requestErgoForm.controls.workEmail.touched && requestErgoForm.controls.workEmail.invalid"
+                class="error-msg">
+                <div *ngIf="requestErgoForm.controls.workEmail.errors.required" class="error-msg" style="color:red;">
+                  Email is required.</div>
+                <div *ngIf="requestErgoForm.controls.workEmail.errors.pattern" style="color:red;">Please, Enter Valid
+                  Email Id.</div>
+              </div>
+
+            </li>
+            <li class="form-input-text">
+              <label>Phone</label>
+              <input type="text" id="phone" [(ngModel)]="requestErgo.phone" formControlName="phone" name="phone">
+              <div *ngIf="requestErgoForm.controls.phone.touched && requestErgoForm.controls.phone.invalid"
+                class="error-msg">
+                <div *ngIf="requestErgoForm.controls.phone.errors.required" style="color:red;" class="error-msg"> *Phone
+                  is required.</div>
+
+              </div>
+            </li>
+            <li>
+              <div class="form-input-text">
+                <label>Address</label>
+                <textarea id="" cols="30" rows="5" [(ngModel)]="requestErgo.address" formControlName="address"
+                  name="address"></textarea>
+                <div *ngIf="requestErgoForm.controls.address.touched && requestErgoForm.controls.address.invalid"
+                  class="error-msg">
+                  <div *ngIf="requestErgoForm.controls.address.errors.required" style="color:red;" class="error-msg">*
+                    Address is required.</div>
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
+
+      <div class="actions-btn profile-actions">
+        <button type="submit"class="btn-new"  (click)="submitForUpdateProfile()" >
+          <span>Update Profile</span>
+      </button>
+        <button type="submit"class="btn-new"  (click)="submitForResetPassword(requestErgo.workEmail)">
+            <span>Reset Password</span>
+        </button>
+        <button type="submit"class="btn-new"  (click)="logout()">
+          <span>Logout</span>
+      </button>
+    </div>
+
+      
+      
+    </div>
+  </form>
+</section>
+<section class="c-popup" *ngIf="formSubmitted">
+  <div class="popup-con">
+    <img src="assets/images/checkmark-circle.svg" alt="">
+    <h3> Success</h3>
+    <p>Your Profile data Updated</p>
+    <a (click)="hide()">OK</a>
+  </div>
+</section>
+
+<section class="c-popup" *ngIf="formSubmittedError">
+  <div class="popup-con">
+    <img src="assets/images/Icon-awesome-exclamation-triangle.png" alt="">
+    <h3> Success</h3>
+    <p>Please Fill All Data</p>
+    <a (click)="formSubmittedErrorButtonHide()">OK</a>
+  </div>
+</section>
+
+<section class="c-popup" *ngIf="isPaswordLinkSent">
+  <div class="popup-con">
+  <img src="assets/images/checkmark-circle.svg" alt="">
+  <h3>Email Sent</h3>
+  <p>{{EmailPaswordLinkSendMsg}}</p>
+  <a routerLink="/login">OK</a>
+  </div>
+  </section>
+<app-footer></app-footer>

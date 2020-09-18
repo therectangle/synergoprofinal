@@ -1,0 +1,574 @@
+<app-navbar></app-navbar>
+    <section class="wrapper c-inner-banner request-ergo ">
+	 
+        <div class="custom-container">
+            <h1>
+                Request Ergo Assessment
+            </h1>
+            <!-- <a class="btn-new" href=""><span>Start Assessment</span></a> -->
+        </div>
+        <span class="mouse-icon"><img src="assets/images/home/mouse_icon.svg" alt=""></span>
+    </section>
+    <section class="wrapper c-breadcrumb">
+        <div class="custom-container">
+            <a href="">Home</a> / <a href="">Request Ergo Assessment</a> / <a href="" class="active">Remote</a>
+        </div>
+    </section>
+    
+    <section class="wrapper p-self-ergo innepage">
+        <form class="w-full"  [formGroup]="requestErgoForm">
+        <div class="custom-container">
+            <div class="inner-col assessment-type">
+                <h2>
+                    Assessment Type
+                </h2>
+                <div class="form-col">
+                    <h4>
+                        Select Assessment type
+                    </h4>
+                    <ul class="types" >
+                        <li class="form-input-radio">
+                        <input type="radio"  (change)="assessmentype(requestErgo.assessmentType)" id="radio-button-v1" [(ngModel)]="requestErgo.assessmentType" 
+                        formControlName="assessmentType" name="assessmentType" value="Remote" required 
+                        >
+                          <label for="radio-button-v1">Remote</label>
+                      </li>
+                      <li class="form-input-radio" >
+                        <input type="radio" id="radio-button-v2" (change)="assessmentype(requestErgo.assessmentType)" [(ngModel)]="requestErgo.assessmentType" 
+                        formControlName="assessmentType" name="assessmentType" value="On-Site" required
+                        >
+                          <label for="radio-button-v2">On-Site</label>
+                      </li>
+                     <span *ngIf="requestErgoForm.controls.assessmentType.touched && requestErgoForm.controls.assessmentType.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.assessmentType.errors.required" class="error-msg">Assessement is required.</div>
+                               
+                        </span> 
+                    </ul>
+                </div>
+            </div>
+            <div class="inner-col personal-details">
+                <h2>
+                    Personal Details
+                </h2>
+                <div class="form-col">
+                    <ul>
+                        <li class="form-input-text">
+                          <label>Full Name</label>
+                          <input type="text" id="fullName" [(ngModel)]="requestErgo.fullName"
+                        formControlName="fullName" name="fullName">
+                         <span *ngIf="requestErgoForm.controls.fullName.touched && requestErgoForm.controls.fullName.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.fullName.errors.required" class="error-msg">Full Name is required.</div>
+                               
+                        </span> 
+                      </li>
+                      <li class="form-input-text">
+                          <label>Organisation</label>
+                          <input type="text" id="organisation" [(ngModel)]="requestErgo.organisation"
+                          formControlName="organisation" name="organisation">
+                          <span *ngIf="requestErgoForm.controls.organisation.touched && requestErgoForm.controls.organisation.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.organisation.errors.required" class="error-msg">Organisation is required.</div>
+                               
+                        </span> 
+                      </li>
+                      <li class="form-input-text">
+                          <label>Work email</label>
+                          <input type="text" id="workEmail" [(ngModel)]="requestErgo.workEmail"
+                          formControlName="workEmail" name="workEmail">
+                          <div *ngIf="requestErgoForm.controls.workEmail.touched && requestErgoForm.controls.workEmail.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.workEmail.errors.required" class="error-msg" style="color:red;">Email is required.</div>
+                                 <div *ngIf="requestErgoForm.controls.workEmail.errors.pattern" style="color:red;">Please, Enter Valid Email Id.</div> 
+                        </div> 
+                         
+                      </li>
+                      <li class="form-input-text">
+                          <label>Phone</label>
+                          <input type="text" id="phone" [(ngModel)]="requestErgo.phone"
+                          formControlName="phone" name="phone" 
+                          >
+                          <div *ngIf="requestErgoForm.controls.phone.touched && requestErgoForm.controls.phone.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.phone.errors.required" style="color:red;" class="error-msg"> *Phone is required.</div>
+                               
+                        </div>
+                      </li>
+                        <li *ngIf="address == true">
+                            <div class="form-input-text">
+                                <label >Address</label>
+                                <textarea  id="" cols="30" rows="5" [(ngModel)]="requestErgo.address"
+                                formControlName="address" name="address"></textarea>
+                                 <div *ngIf="requestErgoForm.controls.address.touched && requestErgoForm.controls.address.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.address.errors.required" style="color:red;" class="error-msg">* Address is required.</div>
+                               
+                        </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="inner-col assessment-details">
+                <h2>
+                    Assessment Details
+                </h2>
+                <div class="form-col">
+                    <h4>
+                        Reason for assessment:
+                    </h4>
+                    <ul class="types">
+                        <li>
+                            <div class="form-input-radio">
+                                <input type="radio" id="radio-button-v4" [(ngModel)]="requestErgo.reasonForAssetment"
+                                formControlName="reasonForAssetment" name="reasonForAssetment" value="Preventive">
+                                <label for="radio-button-v4">Preventive</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-input-radio">
+                                <input type="radio" id="radio-button-v5" [(ngModel)]="requestErgo.reasonForAssetment"
+                                formControlName="reasonForAssetment" name="reasonForAssetment" value="Move to new workstation">
+                                <label for="radio-button-v5">Move to new workstation</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-input-radio">
+                                <input type="radio" id="radio-button-v6" [(ngModel)]="requestErgo.reasonForAssetment"
+                                formControlName="reasonForAssetment" name="reasonForAssetment" value="Experiencing Pain/ discomfort">
+                                <label for="radio-button-v6">Experiencing Pain/ discomfort</label>
+                            </div>
+
+                        </li>
+                        <span *ngIf="requestErgoForm.controls.reasonForAssetment.touched && requestErgoForm.controls.reasonForAssetment.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.reasonForAssetment.errors.required" class="error-msg">Reason For Assetment is required.</div>
+                               
+                        </span>
+                        
+                    </ul>
+                    <div class="sub-options" *ngIf="requestErgo.reasonForAssetment=='Experiencing Pain/ discomfort'">
+                        <h5>Select the areas of pain/ discomfort:</h5>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="head-m" [(ngModel)]="requestErgo.areaOfPainHeadSelected"
+                                        formControlName="areaOfPainHeadSelected" name="areaOfPainHeadSelected" >
+                                        <label for="head-m"><span></span>
+                                            <p>Head</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainHeadSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="head-v1" [(ngModel)]="requestErgo.areaOfPainHeadValue"
+                                                    formControlName="areaOfPainHeadValue" name="areaOfPainHeadValue" value="Persistent pain">
+                                                    <label for="head-v1">Persistent pain</label>
+                                                </div>
+                                            </li>  
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="head-v2" [(ngModel)]="requestErgo.areaOfPainHeadValue"
+                                                    formControlName="areaOfPainHeadValue" name="areaOfPainHeadValue" value="Pain comes & goes">
+                                                    <label for="head-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+
+                                            <span *ngIf="requestErgoForm.controls.areaOfPainHeadValue.touched && requestErgoForm.controls.areaOfPainHeadValue.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.areaOfPainHeadValue.errors.required" class="error-msg">Area of Pain Head is required.</div>
+                               
+                        </span>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="eyes-m" [(ngModel)]="requestErgo.areaOfPainEyesSelected"
+                                        formControlName="areaOfPainEyesSelected" name="areaOfPainEyesSelected">
+                                        <label for="eyes-m"><span></span>
+                                            <p>Eyes</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainEyesSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="eyes-v1" [(ngModel)]="requestErgo.areaOfPaininEyesValue"
+                                                    formControlName="areaOfPaininEyesValue" name="areaOfPaininEyesValue"  value="Persistent pain">
+                                                    <label for="eyes-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="eyes-v2" [(ngModel)]="requestErgo.areaOfPaininEyesValue"
+                                                    formControlName="areaOfPaininEyesValue" name="areaOfPaininEyesValue" value="Pain comes & goes">
+                                                    <label for="eyes-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="neck-m" [(ngModel)]="requestErgo.areaOfPainNeckSelected"
+                                        formControlName="areaOfPainNeckSelected" name="areaOfPainNeckSelected" value="Neck">
+                                        <label for="neck-m"><span></span>
+                                            <p>Neck</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainNeckSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="neck-v1" [(ngModel)]="requestErgo.areaOfPainNeckValue"
+                                                    formControlName="areaOfPainNeckValue" name="areaOfPainNeckValue"  value="Persistent pain">
+                                                    <label for="neck-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="neck-v2" [(ngModel)]="requestErgo.areaOfPainNeckValue"
+                                                    formControlName="areaOfPainNeckValue" name="areaOfPainNeckValue" value="Pain comes & goes">
+                                                    <label for="neck-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="radio-upper-back" [(ngModel)]="requestErgo.areaOfPainUpperBackSelected"
+                                        formControlName="areaOfPainUpperBackSelected" name="areaOfPainUpperBackSelected" value="Upper Back">
+                                        <label for="radio-upper-back"><span></span>
+                                            <p>Upper Back</p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="lower-back-m"  [(ngModel)]="requestErgo.areaOfPainLowerBackSelected"
+                                        formControlName="areaOfPainLowerBackSelected" name="areaOfPainLowerBackSelected" value="Lower Back">
+                                        <label for="lower-back-m"><span></span>
+                                            <p>Lower Back</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainLowerBackSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="lower-back-v1" [(ngModel)]="requestErgo.areaOfPainUpperBackValue"
+                                                    formControlName="areaOfPainUpperBackValue" name="areaOfPainUpperBackValue" value="Persistent pain">
+                                                    <label for="lower-back-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="lower-back-v2" [(ngModel)]="requestErgo.areaOfPainUpperBackValue"
+                                                    formControlName="areaOfPainUpperBackValue" name="areaOfPainUpperBackValue" value="Pain comes & goes">
+                                                    <label for="lower-back-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="shoulders-m"  [(ngModel)]="requestErgo.areaOfPainUpperBackValue"
+                                        formControlName="areaOfPainUpperBackValue" name="areaOfPainUpperBackValue">
+                                        <label for="shoulders-m"><span></span>
+                                            <p>Shoulders</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainUpperBackValue!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="shoulder-v1" [(ngModel)]="requestErgo.areaOfPainShouldersValue"
+                                                    formControlName="areaOfPainShouldersValue" name="areaOfPainShouldersValue"  value="Persistent pain">
+                                                    <label for="shoulder-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="shoulder-v2" [(ngModel)]="requestErgo.areaOfPainShouldersValue"
+                                                    formControlName="areaOfPainShouldersValue" name="areaOfPainShouldersValue" value="Pain comes & goes">
+                                                    <label for="shoulder-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="forearms-m"  [(ngModel)]="requestErgo.areaOfPainForearmsSelected"
+                                        formControlName="areaOfPainForearmsSelected" name="areaOfPainForearmsSelected" >
+                                        <label for="forearms-m"><span></span>
+                                            <p>Forearms</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainForearmsSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="forearms-v1" [(ngModel)]="requestErgo.areaOfPainForearmsValue"
+                                                    formControlName="areaOfPainForearmsValue" name="areaOfPainForearmsValue"  value="Persistent pain">
+                                                    <label for="forearms-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="forearms-v2" [(ngModel)]="requestErgo.areaOfPainForearmsValue"
+                                                    formControlName="areaOfPainForearmsValue" name="areaOfPainForearmsValue" value="Pain comes & goes">
+                                                    <label for="forearms-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="wrist-m"  [(ngModel)]="requestErgo.areaOfPainWristsSelected"
+                                        formControlName="areaOfPainWristsSelected" name="areaOfPainWristsSelected">
+                                        <label for="wrist-m"><span></span>
+                                            <p>Wrists</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainWristsSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="wrist-v1" [(ngModel)]="requestErgo.areaOfPainWritsValue"
+                                                    formControlName="areaOfPainWritsValue" name="areaOfPainWritsValue" value="Persistent pain">
+                                                    <label for="wrist-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="wrist-v2" [(ngModel)]="requestErgo.areaOfPainWritsValue"
+                                                    formControlName="areaOfPainWritsValue" name="areaOfPainWritsValue" value="Pain comes & goes">
+                                                    <label for="wrist-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="hand-m"  [(ngModel)]="requestErgo.areaOfPainHandsSelected"
+                                        formControlName="areaOfPainHandsSelected" name="areaOfPainHandsSelected">
+                                        <label for="hand-m"><span></span>
+                                            <p>Hands</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainHandsSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="hand-v1" [(ngModel)]="requestErgo.areaOfPainHandsValue"
+                                                    formControlName="areaOfPainHandsValue" name="areaOfPainHandsValue" value="Persistent pain">
+                                                    <label for="hand-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="hand-v2" [(ngModel)]="requestErgo.areaOfPainHandsValue"
+                                                    formControlName="areaOfPainHandsValue" name="areaOfPainHandsValue" value="Pain comes & goes">
+                                                    <label for="hand-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="kneea-m"  [(ngModel)]="requestErgo.areaOfPainKneesSelected"
+                                        formControlName="areaOfPainKneesSelected" name="areaOfPainKneesSelected">
+                                        <label for="kneea-m"><span></span>
+                                            <p>Knees</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainKneesSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="knees-v1" [(ngModel)]="requestErgo.areaOfPainKneesValue"
+                                                    formControlName="areaOfPainKneesValue" name="areaOfPainKneesValue" 
+                                                    value="Persistent pain">
+                                                    <label for="knees-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="knees-v2" [(ngModel)]="requestErgo.areaOfPainKneesValue"
+                                                    formControlName="areaOfPainKneesValue" name="areaOfPainKneesValue" 
+                                                    value="Pain comes & goes">
+                                                    <label for="knees-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="feet-m"  [(ngModel)]="requestErgo.areaOfPainFeetSelected"
+                                        formControlName="areaOfPainFeetSelected" name="areaOfPainFeetSelected">
+                                        <label for="feet-m"><span></span>
+                                            <p>Feet</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainFeetSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="feet-v1" [(ngModel)]="requestErgo.areaOfPainFeetValue"
+                                                    formControlName="areaOfPainFeetValue" name="areaOfPainFeetValue" value="Persistent pain">
+                                                    <label for="feet-v1">Persistent pain</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="feet-v2" [(ngModel)]="requestErgo.areaOfPainFeetValue"
+                                                    formControlName="areaOfPainFeetValue" name="areaOfPainFeetValue" value="Pain comes & goes">
+                                                    <label for="feet-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-input-checkbox">
+                                        <input type="checkbox" id="other-m"  [(ngModel)]="requestErgo.areaOfPainOthersSelected"
+                                        formControlName="areaOfPainOthersSelected" name="areaOfPainOthersSelected">
+                                        <label for="other-m"><span></span>
+                                            <p>Others</p>
+                                        </label>
+                                    </div>
+                                    <div [class.onselect]='!requestErgo.areaOfPainOthersSelected!=""'>
+                                        <ul>
+                                            <li>
+                                                <div class="form-input-text">
+                                                   
+ <textarea id="others-v1" [(ngModel)]="requestErgo.areaOfPainOthersValue"
+ formControlName="areaOfPainOthersValue" name="areaOfPainOthersValue" value="Persistent pain" placeholder="Mention other pain/discomfort area"></textarea>
+                                                </div>
+                                            </li>
+                                            <!--<li>
+                                                <div class="form-input-radio">
+                                                    <input type="radio" id="others-v2" [(ngModel)]="requestErgo.areaOfPainOthersValue"
+                                                    formControlName="areaOfPainOthersValue" name="areaOfPainOthersValue" value="Pain comes & goes">
+                                                    <label for="others-v2">Pain comes & goes</label>
+                                                </div>
+                                            </li>-->
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-col schedule-details">
+                <h2>
+                    Schedule Details
+                </h2>
+                <div class="form-col">
+                    <h4>Preferred Dates & time ( in order of preference )</h4>
+                    <ul>
+                        <li>
+                            <div class="form-input-text">
+                                <textarea name="" id="prefferedDatesTime" cols="30" rows="5" [(ngModel)]="requestErgo.prefferedDatesTime"
+                                formControlName="prefferedDatesTime" name="prefferedDatesTime"></textarea>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="inner-col image-upload" *ngIf="imgupload == true">
+                <h2>Image Upload</h2>
+                    
+                
+                <div class="form-col">
+                    <h4>Upload 2 home office photos</h4>
+                    <ul>
+                        <li class="desc">
+                            <ul>
+                                <li>Get someone to take the photo for you. Don’t take a selfie.</li>
+                                <li>Sit at your desk with hands on your mouse and keyboard.</li>
+                                <li>Ensure that your chair, desk, computer, keyboard and mouse are visible.</li>
+                                <li>Wear light coloured clothing and take the photos in good lighting.</li>
+                                <li>Do not drape anything over your chair (e.g. jacket, towel, etc).</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+                                <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+                                <h4>Drag & drop or <a href="">Browse</a> files to upload</h4>
+                              </div>
+                                
+                                <div  class="files-list" *ngFor="let file of files;let i=index">
+                                  <p><img src='{{file}}' height="50px" width="50px"></p>
+                                  <button class="delete-file" (click)="deleteAttachment(i)">
+                                    Delete
+                                  </button>
+                                </div>
+                                <span *ngIf="filesizeerr" class="error-msg">Please upload 5 mb  size file</span>
+                
+                        </li>
+
+                        <li class="desc">
+                            <h4>Upload 2 home office photos</h4>
+                            <ol >
+                                <li> Side view - perpendicular to your mousing side</li>
+                                <li>Diagonal View - taken from behind above your shoulder</li>
+                            </ol>
+                            <div class="img-ref">
+                                <img src="assets/images/u1708.svg" alt="">
+                                <img src="assets/images/u1709.svg" alt="">
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="inner-col additional-details">
+                <h2>
+                    Additional Details
+                </h2>
+                <div class="form-col">
+                    <h4>Anything else that we should know?</h4>
+                    <ul>
+                        <li>
+                            <div class="form-input-text">
+                                <textarea name="" id="" cols="30" rows="5" [(ngModel)]="requestErgo.additionalDetails"
+                                formControlName="additionalDetails" name="additionalDetails"></textarea>
+                               
+                               <!-- <span *ngIf="requestErgoForm.controls.additionalDetails.touched && requestErgoForm.controls.additionalDetails.invalid" class="error-msg">
+                                <div *ngIf="requestErgoForm.controls.additionalDetails.errors.required" class="error-msg">Area of Pain Head is required.</div>
+                               
+                        </span>--> 
+                            
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="actions-btn">
+                <button type="submit"class="btn-new"  (click)="onRequestErgoSubmit()">
+                    <span>Submit Request</span>
+                </button>
+            </div>
+        </div>
+		</form>
+    </section>
+    <section class="c-popup" *ngIf="formSubmitted">
+    <div class="popup-con">
+      <img src="assets/images/checkmark-circle.svg" alt="">
+      <h3> Success</h3>
+      <p>Your Ergo Assessment Request has been placed successfully</p>
+      <a (click)="hide()">OK</a>
+    </div>
+  </section>
+    <app-footer></app-footer>

@@ -1,0 +1,759 @@
+<app-navbar></app-navbar>
+<section class="wrapper c-inner-banner product-banner">
+    <!-- <img src="assets/images/resource/Image 1.png" alt=""> -->
+    <div class="custom-container">
+        <h1>
+            PRODUCTS
+        </h1>
+        <!-- <a class="btn-new" href=""><span>Start Assessment</span></a> -->
+    </div>
+    <span class="mouse-icon"><img src="assets/images/home/mouse_icon.svg" alt=""></span>
+</section>
+<section class="wrapper c-breadcrumb">
+    <div class="custom-container">
+        <a href="">Home</a> / <a href="" class="active">Products</a>
+    </div>
+</section>
+<section class="wrapper p-product innepage">
+    <div class="custom-container">
+        <div class="tabs">
+            <ul>
+                <li [class.active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">
+                    <a>All</a>
+                </li>
+                <li [class.active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">
+                    <a>Desks & Chairs</a>
+                </li>
+                <li [class.active]="viewMode == 'tab3'" rel="tab3" (click)="viewMode ='tab3'">
+                    <a>Keyboards & Mice</a>
+                </li>
+                <li [class.active]="viewMode == 'tab4'" rel="tab4" (click)="viewMode ='tab4'">
+                    <a>Display Accessories</a>
+                </li>
+                <li [class.active]="viewMode == 'tab5'" rel="tab5" (click)="viewMode ='tab5'">
+                    <a>Other Ergo Products</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="custom-container">
+        <div class="filter">
+            <p>Filter by Discomfort :</p>
+            <select>
+                <option value="Select">Select</option>
+                <option value="Eyes">Eyes</option>
+                <option value="Neck">Neck</option>
+                <option value="Shoulder">Shoulder</option>
+                <option value="Elbow">Elbow</option>
+                <option value="Upper Back">Upper Back</option>
+                <option value="Lower Back">Lower Back</option>
+                <option value="Hand Feet Ankles">Hands, Feet & Ankles</option>
+            </select>
+        </div>
+    </div>
+
+    <div [ngSwitch]="viewMode">
+
+        <div class="custom-container" id="tab1" *ngSwitchCase="'tab1'">
+            <div class="product-row">
+                <div class="images">
+                    <owl-carousel [options]="carouselOptions" [items]="images1"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images1;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+
+                <!--        <img src="assets/images/product/backsupport.jpg" alt=""> -->
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev">
+                        <div class="nav-btn prev-slide"></div>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next disabled">
+                        <div class="nav-btn next-slide"></div>
+                    </button>
+                </div>
+                <div class="owl-dots">
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot active"><span></span></button>
+                </div>
+
+                <div class="pro-desc">
+                    <h2>Fellowes Back Support Cushion</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div>
+
+                                <p>- Reduces lower back injuries.</p>
+
+                                <p> - Promotes neutral spine position and reduces lower back pressure.</p>
+
+                                <p>- Those sitting on a chair which does not have an adequate lumbar support.</p>
+                                <p>- Can also be used in situations where the chair is too big / seat pan of chair is
+                                    too long for you.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 107.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/ergo_chair.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images2"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images2;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Fern Ergonomic Chair</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+
+                            <div>
+                                <p>- Conforms to your body shape.</p>
+
+                                <p> - Supports the spine and prevents long term injuries.</p>
+
+                                <p>- Reduces pressure in joints and maximizes comfort.</p>
+                                <p>- Customizable to a wide range of users.</p>
+                                <p>- Improves overall work productivity.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 1650.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="images">
+                    <!--   <img src="assets/images/product/ergo_desk.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images3"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images3;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>FAM Adjustable Desk</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+                            <div>
+                                <p>- Promotes neutral spine position and reduces overall back pressure.</p>
+
+                                <p> - Users who wish to enjoy the health benefits of working in a standing position.</p>
+
+                                <p>- Users who have back injuries.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 2149.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/footrest.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images4"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images4;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Footrest</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+                            <div>
+                                <p>- Minimizes back pressure by allowing you to sit higher.</p>
+
+                                <p> - Allows you to angle your feet and removes the pressure point behind your knees.
+                                </p>
+
+                                <p>- Improves blood circulation in lower body.</p>
+                                <p>- Users who cannot rest their feet comfortably on the ground.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 177.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/laptop_stand.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images5"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images5;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Synergo Portable Laptop Stand</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div>
+                                <p>- Prevents cervical spondylosis.</p>
+
+                                <p> - Eliminates the health hazards of bending the neck and leaning
+                                    forward.</p>
+
+                                <p>- Allows you to work in a healthy posture while travelling or in
+                                    meeting rooms.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 80.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/semi_vertical_mouse.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images6"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images6;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Semi-vertical Mouse</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+
+                            <div>
+                                <p>- Provides a neutral wrist posture.</p>
+
+                                <p> - Removes pressure from the median nerve/wrist.</p>
+
+                                <p>- Helps you to manage existing wrist injuries.</p>
+                                <p>- Users who suffer from Carpal Tunnel Syndrome or other wrist related discomfort.</p>
+                                <p>- Users with heavy mouse usage.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 125.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div [ngSwitch]="viewMode">
+
+        <div class="custom-container" id="tab2" *ngSwitchCase="'tab2'">
+            <div class="product-row">
+                <div class="images">
+                    <owl-carousel [options]="carouselOptions" [items]="images1"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images1;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+
+                <!--        <img src="assets/images/product/backsupport.jpg" alt=""> -->
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev">
+                        <div class="nav-btn prev-slide"></div>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next disabled">
+                        <div class="nav-btn next-slide"></div>
+                    </button>
+                </div>
+                <div class="owl-dots">
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot active"><span></span></button>
+                </div>
+
+                <div class="pro-desc">
+                    <h2>Fellowes Back Support Cushion</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li class="active">Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div>
+
+                                <p>- Reduces lower back injuries.</p>
+
+                                <p> - Promotes neutral spine position and reduces lower back pressure.</p>
+
+                                <p>- Those sitting on a chair which does not have an adequate lumbar support.</p>
+                                <p>- Can also be used in situations where the chair is too big / seat pan of chair is
+                                    too long for you.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 107.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/ergo_chair.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images2"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images2;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Fern Ergonomic Chair</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+
+                            <div>
+                                <p>- Conforms to your body shape.</p>
+
+                                <p> - Supports the spine and prevents long term injuries.</p>
+
+                                <p>- Reduces pressure in joints and maximizes comfort.</p>
+                                <p>- Customizable to a wide range of users.</p>
+                                <p>- Improves overall work productivity.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 1650.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <div [ngSwitch]="viewMode">
+
+        <div class="custom-container" id="tab3" *ngSwitchCase="'tab3'">
+            <div class="product-row">
+                <div class="images">
+                    <owl-carousel [options]="carouselOptions" [items]="images1"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images1;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+
+                <!--        <img src="assets/images/product/backsupport.jpg" alt=""> -->
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev">
+                        <div class="nav-btn prev-slide"></div>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next disabled">
+                        <div class="nav-btn next-slide"></div>
+                    </button>
+                </div>
+                <div class="owl-dots">
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot active"><span></span></button>
+                </div>
+
+                <div class="pro-desc">
+                    <h2>Fellowes Back Support Cushion</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div>
+
+                                <p>- Reduces lower back injuries.</p>
+
+                                <p> - Promotes neutral spine position and reduces lower back pressure.</p>
+
+                                <p>- Those sitting on a chair which does not have an adequate lumbar support.</p>
+                                <p>- Can also be used in situations where the chair is too big / seat pan of chair is
+                                    too long for you.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 107.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/ergo_chair.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images2"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images2;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Fern Ergonomic Chair</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+
+                            <div>
+                                <p>- Conforms to your body shape.</p>
+
+                                <p> - Supports the spine and prevents long term injuries.</p>
+
+                                <p>- Reduces pressure in joints and maximizes comfort.</p>
+                                <p>- Customizable to a wide range of users.</p>
+                                <p>- Improves overall work productivity.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 1650.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <div [ngSwitch]="viewMode">
+
+        <div class="custom-container" id="tab4" *ngSwitchCase="'tab4'">
+            <div class="product-row">
+                <div class="images">
+                    <owl-carousel [options]="carouselOptions" [items]="images1"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images1;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+
+                <!--        <img src="assets/images/product/backsupport.jpg" alt=""> -->
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev">
+                        <div class="nav-btn prev-slide"></div>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next disabled">
+                        <div class="nav-btn next-slide"></div>
+                    </button>
+                </div>
+                <div class="owl-dots">
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot active"><span></span></button>
+                </div>
+
+                <div class="pro-desc">
+                    <h2>Fellowes Back Support Cushion</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div>
+
+                                <p>- Reduces lower back injuries.</p>
+
+                                <p> - Promotes neutral spine position and reduces lower back pressure.</p>
+
+                                <p>- Those sitting on a chair which does not have an adequate lumbar support.</p>
+                                <p>- Can also be used in situations where the chair is too big / seat pan of chair is
+                                    too long for you.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 107.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/ergo_chair.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images2"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images2;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Fern Ergonomic Chair</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+
+                            <div>
+                                <p>- Conforms to your body shape.</p>
+
+                                <p> - Supports the spine and prevents long term injuries.</p>
+
+                                <p>- Reduces pressure in joints and maximizes comfort.</p>
+                                <p>- Customizable to a wide range of users.</p>
+                                <p>- Improves overall work productivity.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 1650.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <div [ngSwitch]="viewMode">
+
+        <div class="custom-container" id="tab5" *ngSwitchCase="'tab5'"> 
+            <div class="product-row">
+                <div class="images">
+                    <owl-carousel [options]="carouselOptions" [items]="images1"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images1;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+
+                <!--        <img src="assets/images/product/backsupport.jpg" alt=""> -->
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev">
+                        <div class="nav-btn prev-slide"></div>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next disabled">
+                        <div class="nav-btn next-slide"></div>
+                    </button>
+                </div>
+                <div class="owl-dots">
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button>
+                    <button role="button" class="owl-dot active"><span></span></button>
+                </div>
+
+                <div class="pro-desc">
+                    <h2>Fellowes Back Support Cushion</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div>
+
+                                <p>- Reduces lower back injuries.</p>
+
+                                <p> - Promotes neutral spine position and reduces lower back pressure.</p>
+
+                                <p>- Those sitting on a chair which does not have an adequate lumbar support.</p>
+                                <p>- Can also be used in situations where the chair is too big / seat pan of chair is
+                                    too long for you.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 107.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="images">
+                    <!--  <img src="assets/images/product/ergo_chair.jpg" alt=""> -->
+                    <owl-carousel [options]="carouselOptions" [items]="images2"
+                        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+
+                        <section *ngFor="let image of images2;let i= index">
+                            <img class="slide-image" src="{{image.image}}">
+                        </section>
+                    </owl-carousel>
+                </div>
+                <div class="pro-desc">
+                    <h2>Fern Ergonomic Chair</h2>
+                    <div class="product-tabs">
+                        <ul>
+                            <li>Ergonomic Benefits</li>
+                            <li>Product Specifications</li>
+                            <li>Usage Tips</li>
+                        </ul>
+                        <div class="tab-content">
+
+
+
+                            <div>
+                                <p>- Conforms to your body shape.</p>
+
+                                <p> - Supports the spine and prevents long term injuries.</p>
+
+                                <p>- Reduces pressure in joints and maximizes comfort.</p>
+                                <p>- Customizable to a wide range of users.</p>
+                                <p>- Improves overall work productivity.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <h3>$ 1650.00</h3> <a href="" class="btn-new"><span>Buy</span></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+    <!-- -->
+
+</section>
+
+<app-footer></app-footer>

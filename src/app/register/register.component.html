@@ -1,0 +1,73 @@
+
+    <section class="p-login"> 
+        <div class="image-div">
+            <div class="logo">
+              <img src="assets/images/synergo-logo-white.svg" alt="">
+            </div>
+            
+            <p>Ergonomics Program Management Suite</p>
+        </div>
+        <div class="form-div">
+          <form class="form-wrap" [formGroup]="registerForm">
+              <h2 class="w-full">
+                Sign Up
+              </h2>
+              <p class="desc-text">
+                Please register with your registered company email address
+              </p>
+              <ul class="w-full">
+                <li class="form-input-text-2" [class.error]="(registerForm.get('fullName').touched  || isRegistrationValidationFailed )&& registerForm.get('fullName').errors">
+                    <label>Full Name</label>
+                    <input type="text" formControlName="fullName" class="form-control">
+                    <span *ngIf="(registerForm.get('fullName').touched || isRegistrationValidationFailed) &&   f.fullName.errors" class="error-msg">Please provide a valid full name</span>
+                  </li>
+                  <li class="form-input-text-2 " [class.error]="(registerForm.get('orgName').touched  || isRegistrationValidationFailed) && registerForm.get('orgName').errors">
+                    <label>Company Name</label>
+                    <input type="text" formControlName="orgName" class="form-control">
+                    <span *ngIf="(registerForm.get('orgName').touched || isRegistrationValidationFailed) &&  f.orgName.errors" class="error-msg">Please provide a valid company name</span>
+                  </li>
+                  <li class="form-input-text-2" [class.error]="(registerForm.get('email').touched  || isRegistrationValidationFailed) && (registerForm.get('email').errors || !isValidDomainemailId)" >
+                    <label>Company Email</label>
+                    <input type="email" formControlName="email" class="form-control">
+                    <span *ngIf="(registerForm.get('email').touched || isRegistrationValidationFailed) &&  (registerForm.get('email').errors || !isValidDomainemailId)" class="error-msg">Please provide a valid company email</span>
+                    
+                  </li>
+          
+                  <li class="form-input-text-2" class="form-input-text-2" [class.error]="(registerForm.get('password').touched || isRegistrationValidationFailed) && registerForm.get('password').errors">
+                    <label>Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                    <span *ngIf="(registerForm.get('password').touched || isRegistrationValidationFailed) &&  registerForm.get('password').errors"  class="error-msg">Please provide a valid password</span>
+                  </li>
+                  
+        
+                <li class="form-input-text-2">
+                  <button type="submit" (click)="tryRegister(registerForm.value)" class="btn1">Register</button>
+                </li>
+        
+                <li class="dont-ac">
+                    <p>Already have an account?</p> <a href="#" routerLink="/login" class="text-bold">Login!</a>
+                </li>
+                <!-- <li class="forgot-details">
+                    <a href="">Forgot Login Details?</a>
+                  </li> -->
+              </ul>
+            </form>
+          </div>
+    </section>
+    <section class="c-popup" *ngIf="isRegisteredSuccessfully">
+      <div class="popup-con">
+        <img src="assets/images/checkmark-circle.svg" alt="">
+        <h3>Registration</h3>
+        <p>You have been registered successfully</p>
+        <a routerLink="/login">OK</a>
+      </div>
+    </section>
+
+    <section class="c-popup" *ngIf="isRegistrationFailed">
+      <div class="popup-con">
+        <img src="assets/images/Icon-awesome-exclamation-triangle.png" alt="">
+        <h3>Registration Error</h3>
+        <p>{{errorMessage}}{{successMessage}}</p>
+        <a href="javascript:void()" (click)="isRegistrationFailedPopupClose()">OK</a>
+      </div>
+    </section>

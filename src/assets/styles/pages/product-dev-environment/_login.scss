@@ -1,0 +1,100 @@
+.login-form-main{
+    margin: 50px 0 0;
+    display: flex;
+    justify-content: center;
+    background-color: #fafafa;
+    padding: 40px 0 100px;
+    .form-wrap{
+        width: 410px;
+        border: 1px solid #c8c8c8;
+        background-color: $color-white;
+        padding: 25px 40px;
+        border-radius: 10px;
+        h2{
+            font-size: 24px;
+            line-height: 32px;
+            color: $color-sky-blue;
+            font-weight: 700;
+            text-align: center;
+        }
+        .desc-text{
+            @extend .w-full;
+            margin: 10px 0;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+        }
+        
+        ul{
+            li{
+                @extend .w-full;
+                display: flex;
+                flex-direction: column;
+                margin: 10px 0;
+                label{
+                    @extend .w-full;
+                    @media screen and (max-width: 991px) {
+                        
+                        font-size: 14px;
+                    }
+                }
+                .error-msg{
+                    @extend .w-full;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #ff0000;
+                }
+                input[type="text"], input[type="email"], input[type="password"]{
+                    @extend .w-full;
+                    padding: 8px 15px;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: $color-black;
+                    border: 1px solid #c8c8c8;
+                    border-radius: 20px;
+                    margin: 2px 0;
+                }
+                &.forgot-details{
+                    margin: 20px 0 30px;
+                    span{
+                        color: $color-sky-blue;
+                        cursor: pointer;
+                    }
+                }
+                &.dont-ac{
+                    margin: 10px 0 20px;
+                    text-align: center;
+                    abbr{
+                        color: $color-sky-blue;
+                        cursor: pointer;
+                    }
+                    span{
+                        
+                   
+                    @media screen and (max-width: 991px) {
+                        color: #8c8c8c;
+                        font-size: 14px;
+                    }
+                }
+                }
+                .btn1{
+                    font-size: 14px;
+                    line-height: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 0px;
+                    padding: 10px 15px;
+                    border-radius: 22px;
+                    border: 1px solid #5abaff;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        @media screen and (max-width: 991px) {
+            width: 60%;
+        }
+        @media screen and (max-width: 480px) {
+            width: 95%;
+            padding: 25px 30px;
+        }
+    }
+}

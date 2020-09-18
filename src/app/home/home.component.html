@@ -1,0 +1,139 @@
+
+<app-navbar></app-navbar>
+<!-- <section class="wrapper c-topbanner">
+     <div class="custom-container">
+         <h1>
+             Experiencing neck pain From prolonged working On your laptop?
+         </h1>
+         <a class="btn-new" href="/selfAssessment"><span>Start Assessment</span></a>
+     </div>
+     <span class="mouse-icon"><img src="assets/images/home/mouse_icon.svg" alt=""></span>
+ </section>-->
+ 
+ <section class="c-banner-main wrapper">
+   <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+       <!--  <div class="item" *ngFor="let image of images;let i= index">
+          <img class="slide-image" src="{{image.image}}" >
+          <div class="slide-text">
+            <h4>{{image.text}}</h4>
+          </div>
+        </div> -->
+    
+         <section class="wrapper c-topbanner" *ngFor="let image of images;let i= index">
+            <img class="slide-image" src="{{image.image}}" >
+            <div class="custom-container">
+               
+               <div class="slide-text">
+               <h1 style="color:#fff">
+                    Experiencing neck pain From prolonged working On your laptop?
+                </h1>
+                <a class="btn-new" routerLink="/selfAssessment"><span>Start Assessment</span></a>
+          </div>
+               
+            </div>
+            
+        </section>
+      </owl-carousel>
+
+   <span class="mouse-icon"><img src="assets/images/home/mouse_icon.svg" alt=""></span>
+ </section>
+ 
+ 
+ <section class="wrapper p-Self-Assessment con-row">
+     <div class="custom-container">
+
+         <div class="home-row">
+             <div>
+                 <h2 class="section-heading">Self-Assessment</h2>
+                 <ul>
+                     <li class="content-box">
+                         <div class="img-col"><img src="assets/images/home/home-office-v2.svg" alt=""></div>
+                         <div>
+                             <h3>Home Office</h3>
+                             <p>One line description about Home Office Setup</p>
+                             <a routerLink="/selfAssessment" href="javascript:void()" class="btn-new"><span>Start Assessment</span></a>
+                         </div>
+                     </li>
+
+                     <li class="content-box">
+                         <div class="img-col"><img src="assets/images/home/office-setup-v2.svg" alt=""></div>
+                         <div>
+                             <h3>Office Setup</h3>
+                             <p>One line description of Office Setup</p>
+                             <a href="javascript:void()" routerLink="/selfAssessmentOffice" class="btn-new marron"><span>Start Assessment</span></a>
+                         </div>
+                     </li>
+                 </ul>
+             </div>
+             <div>
+                 <img src="assets/images/home/Self-Assessment-Illustration.svg" alt="">
+             </div>
+         </div>
+     </div>
+ </section>
+ <section class="wrapper p-ergo-Assessment con-row">
+     <div class="custom-container">
+
+         <div class="home-row">
+             <div>
+                 <img src="assets/images/home/request-professional-ergo-assessment.svg" alt="">
+             </div>
+             <div>
+                 <h2 class="section-heading">Request Professional Ergo Assessment</h2>
+                 <ul>
+                     <li class="content-box">
+                         <div class="img-col"><img src="assets/images/home/in-person-v2.svg" alt=""></div>
+                         <div>
+                             <h3>In Person</h3>
+                             <p>One line description about In person</p>
+                              <a href="javascript:void()" routerLink="/requestErgo/2" class="btn-new"><span>Start Assessment</span></a>
+                         </div>
+                     </li>
+
+                     <li class="content-box">
+                         <div class="img-col"><img src="assets/images/home/remote-icon-v2.svg" alt=""></div>
+                         <div>
+                             <h3>Remote</h3>
+                             <p>One line description about Remote</p>
+                             <a href="javascript:void()" routerLink="/requestErgo/1" class="btn-new marron"><span>Start Assessment</span></a>
+                         </div>
+                     </li>
+                 </ul>
+             </div>
+       </div>
+     </div>
+ </section>
+ <section class="wrapper p-Self-Assessment resources con-row">
+     <div class="custom-container">
+
+         <div class="home-row">
+             <div>
+                 <h2 class="section-heading">Resources</h2>
+                 <ul>
+                     <li class="content-box">
+                         <div class="img-col"><img src="assets/images/home/article-v2.svg" alt=""></div>
+                         <div>
+                             <h3>Article 1</h3>
+                             <p>One line description about Article 1</p>
+                             <a href="" class="text-link"><span>Read Article</span></a>
+                         </div>
+                     </li>
+
+                     <li class="content-box">
+                         <div class="img-col"><img src="assets/images/home/newsletter-icon-v2.svg" alt=""></div>
+                         <div>
+                             <h3>Newsletter 2</h3>
+                             <p>One line description about Newsletter 2</p>
+                             <a href="" class="text-link"><span>Read Newsletter</span></a>
+                         </div>
+                     </li>
+                 </ul>
+                 <a href="" class="btn-new"><span>View All</span></a>
+             </div>
+             <div>
+                 <img src="assets/images/home/resources.svg" alt="">
+             </div>
+         </div>
+     </div>
+ </section>
+ <app-footer></app-footer>

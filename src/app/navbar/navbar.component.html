@@ -1,0 +1,67 @@
+<header class="wrapper m-header controllable">
+    <div class="custom-container">
+        <span class="logo">
+            <img src="assets/images/synergo-logo-white.svg" alt="" routerLink="/home">
+            </span>
+        <div class="header-right">
+            <nav class="main-nav">
+                <ul>
+                    <li class="self sub-menu" (click)="parentLi('self')" [class.active]="selected === 'self' || selected === 'selfAssessmentOffice' || selected === 'selfAssessment'"  >
+                        <a href="javascript:void()">
+                            Self-Assessment
+                        </a>
+                        <span class="dropdown-arrow"></span>
+                        <ul>
+                            <li (click)="select('selfAssessment')" [class.active]="selected === 'selfAssessment'">
+                                <a routerLink="/selfAssessment" href="javascript:void()" >Home Office</a>
+                            </li>
+                            <li (click)="select('selfAssessmentOffice')" [class.active]="selected === 'selfAssessmentOffice'">
+                                <a  routerLink="/selfAssessmentOffice" href="javascript:void()" >Office Setup</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ergo sub-menu" (click)="parentLi('ergo')" [class.active]="selected === 'ergo' || selected === 'On-Site' || selected === 'On-Site'" >
+                        <a href="javascript:void()">
+                            Request Ergo Assessment
+                        </a>
+                        <span class="dropdown-arrow"></span>
+                        <ul>
+                            <li (click)="select('On-Site')" [class.active]="selected === 'On-Site'">
+                                <a href="javascript:void()" routerLink="/requestErgo/2"  >On Site</a>
+                            </li>
+                            <li (click)="select('On-Site')" [class.active]="selected === 'On-Site'">
+                                <a href="javascript:void()" routerLink="/requestErgo/1" >Remote</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="resource" (click)="select('resource')" [class.active]="selected === 'resource'">
+                        <a href="javascript:void()" routerLink="/resource" >
+                            Resources
+                        </a>
+                    </li>
+                    <li [class.active]="selected === 'product'">
+                        <a href="javascript:void()" routerLink="/product" >
+                            Products
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="javascript:void()" >
+                            Profile
+                        </a>
+                    </li> -->
+                </ul>
+            </nav>
+            <!-- <div class="pro-icon" (click)="logout()">
+                <img src="assets/images/home/DP Icon.svg" alt="">
+            </div> -->
+            <div class="pro-icon" routerLink="/profile">
+                <img src="assets/images/home/DP Icon.svg" alt="">
+            </div>
+            <div id="nav-icon1" class="nav-icon1" (click)="navclick()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>

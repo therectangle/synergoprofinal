@@ -1,0 +1,585 @@
+<app-navbar></app-navbar>
+
+<section class="wrapper c-inner-banner resource-banner ">
+    <!-- <img src="assets/images/resource/Image 1.png" alt=""> -->
+    <div class="custom-container">
+        <h1>
+            Resources
+        </h1>
+        <!-- <a class="btn-new" href=""><span>Start Assessment</span></a> -->
+    </div>
+    <span class="mouse-icon"><img src="assets/images/home/mouse_icon.svg" alt=""></span>
+</section>
+<section class="wrapper c-breadcrumb">
+    <div class="custom-container">
+        <a href="">Home</a> / <a href="" class="active">Resources</a>
+    </div>
+</section>
+<section class="wrapper p-resource innepage">
+    <div class="custom-container">
+        <div class="tabs">
+            <ul>
+                <li [class.active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">
+                    <a>Featured</a>
+                </li>
+                <li [class.active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">
+                    <a> Articles</a>
+                </li>
+                <li [class.active]="viewMode == 'tab3'" rel="tab3" (click)="viewMode ='tab3'">
+                    <a>Posters</a>
+                </li>
+                <li [class.active]="viewMode == 'tab4'" rel="tab4" (click)="viewMode ='tab4'">
+                    <a>Newsletters</a>
+                </li>
+                <li [class.active]="viewMode == 'tab5'" rel="tab5" (click)="viewMode ='tab5'">
+                    <a>Videos</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div [ngSwitch]="viewMode">
+        <div class="custom-container" id="tab1" *ngSwitchCase="'tab1'">
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/articles.svg" alt="">
+                        <h2>Articles</h2>
+                    </div>
+                    <a (click)="viewMode ='tab2'" class="btn-new">
+                        <span>View All</span>
+                    </a>
+                </div>
+                <div class="card-list">
+                    <ul class="rows">
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/article.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>The facts behind neck pain</h3>
+                                    <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...
+                                    </p>
+                                    <a href="" class="text-link">Read More</a>
+                                    <ul>
+                                        <li>WFH</li>
+                                        <li>Neck</li>
+                                        <li>RSI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/BackImage+4.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Blue light: debunked</h3>
+                                    <p>Blue light is basically light with blue wavelengths. Ever wondered what...</p>
+                                    <a href="" class="text-link">Read More</a>
+                                    <ul>
+                                        <li>Eye</li>
+                                        <li>Research</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/man-back-pain-732x549-thumbnail-732x549-2.png"
+                                        alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>How to save your back</h3>
+                                    <p>Back pain is a frequently occurring concern that people face. About 80%...</p>
+                                    <a href="" class="text-link">Read More</a>
+                                    <ul>
+                                        <li>Lower back</li>
+                                        <li>RSI</li>
+                                        <li>Tips</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/Poster Icon.svg" alt="">
+                        <h2>Posters</h2>
+                    </div>
+                    <a (click)="viewMode ='tab3'" class="btn-new">
+                        <span>View All</span>
+                    </a>
+                </div>
+                <div class="card-list poster-list">
+                    <ul class="rows">
+                        <li class="col-3">
+                            <div class="c-card-new poster">
+                                <div class="image">
+                                    <img src="assets/images/resource/man-back-pain-732x549-thumbnail-732x549-1.png"
+                                        alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <p>Ideal sitting posture</p>
+                                    <!-- <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...</p> -->
+                                    <a href="" class="text-link">View Poster</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new poster">
+                                <div class="image">
+                                    <img src="assets/images/resource/images-6-1.png" alt="">
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <p>Office and desk stretches</p>
+                                    <!-- <p>Clueless at how to organise and setup your home office workstation? Watch this video to learn quick practical ...</p> -->
+                                    <a href="" class="text-link">View Poster</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new poster">
+                                <div class="image">
+                                    <img src="assets/images/resource/man-wearing-gray-long-sleeved-shirt-374598.png"
+                                        alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <p>Tips to manage eye strain</p>
+                                    <!-- <p>The furniture and equipment that we use are only good if we know how to adjust them. Learn specific tips and ...</p> -->
+                                    <a href="" class="text-link">View Poster</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/newsletter.svg" alt="">
+                        <h2>Newsletters</h2>
+                    </div>
+                    <a (click)="viewMode ='tab4'" class="btn-new">
+                        <span>View All</span>
+                    </a>
+                </div>
+                <div class="card-list news-letter-list">
+                    <ul class="rows">
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/news-letter-img-1.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Working at home</h3>
+                                    <p>The global pandemic has seen many companies converting to working...</p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/news-letter-img-2.png" alt="">
+
+                                </div>
+                                <div class="desc">
+                                    <h3>Fitness and ergonomics</h3>
+                                    <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...
+                                    </p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/news-letter-img-3.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Your phone can be harmful to your health</h3>
+                                    <!-- <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...</p> -->
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/Video Icon.svg" alt="">
+                        <h2>Videos</h2>
+                    </div>
+                    <a (click)="viewMode ='tab5'"class="btn-new">
+                        <span>View All</span>
+                    </a>
+                </div>
+                <div class="card-list video-list">
+                    <ul class="rows">
+                        <li class="col-2">
+                            <div class="c-card-new" (click)="videoShow()">
+                                <div class="image">
+                                    <img src="assets/images/resource/download (3).png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="play-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Home office setup video</h3>
+                                    <p>Clueless at how to organise and setup your home office workstation? Watch this
+                                        video to learn quick practical ...</p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-2">
+                            <div class="c-card-new" (click)="videoShow()">
+                                <div class="image">
+                                    <img src="assets/images/resource/7-surprising-back-pain-remedies.png" alt="">
+                                    <span class="play-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Office setup video</h3>
+                                    <p>The furniture and equipment that we use are only good if we know how to adjust
+                                        them. Learn specific tips and ...</p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [ngSwitch]="viewMode">
+        <div class="custom-container" id="tab2" *ngSwitchCase="'tab2'">
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/articles.svg" alt="">
+                        <h2>Articles</h2>
+                    </div>
+                </div>
+                <div class="card-list">
+                    <ul class="rows">
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/article.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>The facts behind neck pain</h3>
+                                    <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...
+                                    </p>
+                                    <a href="" class="text-link">Read More</a>
+                                    <ul>
+                                        <li>WFH</li>
+                                        <li>Neck</li>
+                                        <li>RSI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/BackImage+4.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Blue light: debunked</h3>
+                                    <p>Blue light is basically light with blue wavelengths. Ever wondered what...</p>
+                                    <a href="" class="text-link">Read More</a>
+                                    <ul>
+                                        <li>Eye</li>
+                                        <li>Research</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/man-back-pain-732x549-thumbnail-732x549-2.png"
+                                        alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>How to save your back</h3>
+                                    <p>Back pain is a frequently occurring concern that people face. About 80%...</p>
+                                    <a href="" class="text-link">Read More</a>
+                                    <ul>
+                                        <li>Lower back</li>
+                                        <li>RSI</li>
+                                        <li>Tips</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div [ngSwitch]="viewMode">
+        <div class="custom-container" id="tab3" *ngSwitchCase="'tab3'">
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/Poster Icon.svg" alt="">
+                        <h2>Posters</h2>
+                    </div>
+                
+                </div>
+                <div class="card-list poster-list">
+                    <ul class="rows">
+                        <li class="col-3">
+                            <div class="c-card-new poster">
+                                <div class="image">
+                                    <img src="assets/images/resource/man-back-pain-732x549-thumbnail-732x549-1.png"
+                                        alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <p>Ideal sitting posture</p>
+                                    <!-- <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...</p> -->
+                                    <a href="" class="text-link">View Poster</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new poster">
+                                <div class="image">
+                                    <img src="assets/images/resource/images-6-1.png" alt="">
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <p>Office and desk stretches</p>
+                                    <!-- <p>Clueless at how to organise and setup your home office workstation? Watch this video to learn quick practical ...</p> -->
+                                    <a href="" class="text-link">View Poster</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new poster">
+                                <div class="image">
+                                    <img src="assets/images/resource/man-wearing-gray-long-sleeved-shirt-374598.png"
+                                        alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="download-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <p>Tips to manage eye strain</p>
+                                    <!-- <p>The furniture and equipment that we use are only good if we know how to adjust them. Learn specific tips and ...</p> -->
+                                    <a href="" class="text-link">View Poster</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div [ngSwitch]="viewMode">
+        <div class="custom-container" id="tab4" *ngSwitchCase="'tab4'">
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/newsletter.svg" alt="">
+                        <h2>Newsletters</h2>
+                    </div>
+                    
+                </div>
+                <div class="card-list news-letter-list">
+                    <ul class="rows">
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/news-letter-img-1.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Working at home</h3>
+                                    <p>The global pandemic has seen many companies converting to working...</p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/news-letter-img-2.png" alt="">
+
+                                </div>
+                                <div class="desc">
+                                    <h3>Fitness and ergonomics</h3>
+                                    <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...
+                                    </p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-3">
+                            <div class="c-card-new">
+                                <div class="image">
+                                    <img src="assets/images/resource/news-letter-img-3.png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Your phone can be harmful to your health</h3>
+                                    <!-- <p>Poor posture is a known risk factor for neck pain. Instead of attributing it...</p> -->
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div [ngSwitch]="viewMode">
+        <div class="custom-container" id="tab5" *ngSwitchCase="'tab5'">
+            <div class="con-row">
+                <div class="sections-header">
+                    <div>
+                        <img src="assets/images/resource/Video Icon.svg" alt="">
+                        <h2>Videos</h2>
+                    </div>
+                    
+                </div>
+                <div class="card-list video-list">
+                    <ul class="rows">
+                        <li class="col-2">
+                            <div class="c-card-new" (click)="videoShow()">
+                                <div class="image">
+                                    <img src="assets/images/resource/download (3).png" alt="">
+                                    <span class="labels">
+                                        new
+                                    </span>
+                                    <span class="play-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Home office setup video</h3>
+                                    <p>Clueless at how to organise and setup your home office workstation? Watch this
+                                        video to learn quick practical ...</p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-2">
+                            <div class="c-card-new" (click)="videoShow()">
+                                <div class="image">
+                                    <img src="assets/images/resource/7-surprising-back-pain-remedies.png" alt="">
+                                    <span class="play-icon"></span>
+                                </div>
+                                <div class="desc">
+                                    <h3>Office setup video</h3>
+                                    <p>The furniture and equipment that we use are only good if we know how to adjust
+                                        them. Learn specific tips and ...</p>
+                                    <a href="" class="text-link">Read More</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="c-popup" *ngIf="videoPopupDisplay">
+    <div class="popup-con videopop">
+        <iframe width="100%" height="480" src="https://www.youtube.com/embed/cSLJY76Ht5I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <span class="closed-icon" (click)="videohide()">X</span>
+  </section>
+
+
+<app-footer></app-footer>
